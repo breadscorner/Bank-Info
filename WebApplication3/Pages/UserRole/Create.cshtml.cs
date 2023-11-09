@@ -27,7 +27,7 @@ namespace WebApplication3.Pages.UserRole
         }
 
         [BindProperty]
-        public UserRoleVM UserRoleVM { get; set; } = default!;
+        public UserRoleEditVM UserRoleEditVM { get; set; } = default!;
         public List<UserVM> userVMs { get; set; }
         public List<RoleVM> roleVMs { get; set; }
         public string errorMessage = "";
@@ -61,7 +61,7 @@ namespace WebApplication3.Pages.UserRole
             UserRoleRepo userRoleRepo = new UserRoleRepo(_serviceProvider);
             
             // Check if the role assignment is already exists before adding it.
-            if (await userRoleRepo.AddUserRole(UserRoleVM.Email, UserRoleVM.Role))
+            if (await userRoleRepo.AddUserRole(UserRoleEditVM.Email, UserRoleEditVM.Role))
             {
                 return RedirectToPage("./Index");
             }
