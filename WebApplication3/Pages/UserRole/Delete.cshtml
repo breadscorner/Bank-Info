@@ -1,0 +1,41 @@
+﻿@page
+@using WebApplication3.ViewModel;
+@model WebApplication3.Pages.UserRole.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete User Role</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="UserRoleVM.Email" class="control-label">Select User:</label>
+                <select asp-for="UserRoleVM.Email" asp-items="new SelectList(Model.UserVMs, nameof(UserVM.Email), nameof(UserVM.Email)
+)" class="form-control">
+                    <option value="">Select User</option>
+                </select>
+                <span asp-validation-for="UserRoleVM.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UserRoleVM.Role" class="control-label">Select Role:</label>
+                <select asp-for="UserRoleVM.Role" asp-items="new SelectList(Model.RoleVMs, nameof(RoleVM.Id), nameof(RoleVM.RoleName))" class="form-control">
+                    <option value="">Select Role</option>
+                </select>
+                <span asp-validation-for="UserRoleVM.Role" class="text-danger"></span>
+            </div>
+
+            <input type="submit" value="Delete Role" class="btn btn-danger" />
+        </form>
+
+        <p class="text-danger">@Model.ErrorMessage</p>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>

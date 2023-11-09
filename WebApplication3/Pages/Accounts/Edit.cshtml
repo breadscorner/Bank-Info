@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication3.Pages.Accounts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ClientAccountVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ClientAccountVM.AccountNum" />
+            <div class="form-group">
+                <label asp-for="ClientAccountVM.ClientID" class="control-label"></label>
+                <input asp-for="ClientAccountVM.ClientID" readonly="readonly" class="form-control" />
+                <span asp-validation-for="ClientAccountVM.ClientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAccountVM.AccountType" class="control-label"></label>
+                <input asp-for="ClientAccountVM.AccountType" readonly="readonly" class="form-control" />
+                <span asp-validation-for="ClientAccountVM.AccountType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAccountVM.Balance" class="control-label"></label>
+                <input asp-for="ClientAccountVM.Balance" class="form-control" />
+                <span asp-validation-for="ClientAccountVM.Balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAccountVM.FirstName" class="control-label"></label>
+                <input asp-for="ClientAccountVM.FirstName" class="form-control" />
+                <span asp-validation-for="ClientAccountVM.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAccountVM.LastName" class="control-label"></label>
+                <input asp-for="ClientAccountVM.LastName" class="form-control" />
+                <span asp-validation-for="ClientAccountVM.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAccountVM.Email" class="control-label"></label>
+                <input asp-for="ClientAccountVM.Email" readonly="readonly" class="form-control" />
+                <span asp-validation-for="ClientAccountVM.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@page
+@model WebApplication3.Pages.Account.ProfileModel
+
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<h1>Account Details</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Client ID</th>
+            <td>@Model.client.ClientID</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>@Model.client.LastName</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td>@Model.client.FirstName</td>
+        </tr>
+        <tr>
+            <th>Account Number</th>
+            <td>@Model.bankAccount.AccountNum</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.client.Email</td>
+        </tr>
+        <tr>
+            <th>Account Type</th>
+            <td>@Model.bankAccount.AccountType</td>
+        </tr>
+        <tr>
+            <th>Balance</th>
+            <td>@Html.DisplayFor(model => model.bankAccount.Balance)</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,36 @@
+﻿@page
+@model WebApplication3.Pages.UserRole.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>User Roles</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+    <a asp-page="/UserRole/Index">User Roles</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserVM[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.UserVM)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Email">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Email">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Email">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

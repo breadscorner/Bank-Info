@@ -1,0 +1,66 @@
+﻿@page
+@model WebApplication3.Pages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .centered-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .centered-form select,
+        .centered-form button {
+            margin-bottom: 10px; /* Spacing between elements */
+            padding: 10px; /* Padding for better usability */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Light border */
+            width: 200px; /* Set a specific width for better alignment */
+            font-size: 16px; /* Increase font size for readability */
+        }
+
+        .centered-form button {
+            background-color: blue; /* Primary button color */
+            color: white; /* Text color for button */
+            cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+        }
+
+            .centered-form button:hover {
+                background-color: #0056b3; /* Slightly darker color on hover */
+            }
+</style>
+
+<h1 class="centered-form">Welcome To Crabby's Banking</h1>
+
+@if (User.IsInRole("Admin"))
+{
+<form method="get" asp-page="/Accounts/Index" class="centered-form">
+    <h4>Select an account type</h4>
+    <select id="accountType" name="AccountType">
+        <option value="All">All</option>
+        <option value="Chequing">Chequing</option>
+        <option value="Savings">Savings</option>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,55 @@
+﻿@page
+@model WebApplication3.Pages.UserRole.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Assign A Role</h1>
+<h4>UserRoleVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserRoleVM.Email" class="control-label"></label>
+                <select name="Email" class="form-control">
+                    <option value="">Select a user.</option>
+                    @foreach (var item in Model.userVMs)
+                    {
+                        <option value=@Html.Raw(item.Email)>@Html.Raw(item.Email)</option>
+                    }
+                </select>
+                <span asp-validation-for="UserRoleVM.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserRoleVM.Role" class="control-label"></label>
+                <select name="Role" class="form-control">
+                    <option value="">Select a role.</option>
+                    @foreach (var item in Model.roleVMs)
+                    {
+                        <option value=@Html.Raw(item.RoleName)>@Html.Raw(item.RoleName)</option>
+                    }
+                </select>
+
+            </div>
+            <div class="form-group">
+                <span class="text-danger">@Html.Raw(Model.errorMessage)</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

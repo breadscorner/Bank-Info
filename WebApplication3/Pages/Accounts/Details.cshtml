@@ -1,0 +1,47 @@
+﻿@page
+@model WebApplication3.Pages.ClientAccount.ProfileModel
+
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<h1>Account Details</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Client ID</th>
+            <td>@Model.ClientAccount.ClientID</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>@Model.ClientAccount.LastName</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td>@Model.ClientAccount.FirstName</td>
+        </tr>
+        <tr>
+            <th>Account ID</th>
+            <td>@Model.ClientAccount.AccountNum</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.ClientAccount.Email</td>
+        </tr>
+        <tr>
+            <th>Account Type</th>
+            <td>@Model.ClientAccount.AccountType</td>
+        </tr>
+        <tr>
+            <th>Balance</th>
+            <td>@Html.DisplayFor(model => model.ClientAccount.Balance)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    <a asp-page="./Edit" asp-route-clientID="@Model.ClientAccount.ClientID" asp-route-accountNum="@Model.ClientAccount.AccountNum">Edit</a>
+
+    <a asp-page="Index">Back to Accounts</a>
+</p>
