@@ -1,4 +1,4 @@
-# 💰 MyBankApp README 🌐
+# 💰 Bank Account Application README 🌐
 
 Hello and thank you for viewing my application! This application marks my first build into using new powerful languages and technologies, such as ASP.NET. Created as a class assignment in my third term at the BCIT Full Stack Web Development Diploma program, this application is a testament to my learning journey in web development. It's designed to offer a comprehensive solution for managing various types of bank accounts, emphasizing secure, role-based access. Whether you are exploring as a bank administrator, a regular account holder, or just browsing, I hope this application provides you with a glimpse into my skills and dedication to web development. Enjoy your experience!
 
@@ -13,7 +13,7 @@ Hello and thank you for viewing my application! This application marks my first 
 
 Accessing the app is simple! Just visit our hosted version:
 
-🌐 [MyBankApp Hosted Version](https://crabbybank.azurewebsites.net/)
+🌐 [Bank Account Application](https://crabbybank.azurewebsites.net/)
 
 ## Usage 🖥️
 
